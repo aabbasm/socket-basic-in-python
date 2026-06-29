@@ -4,9 +4,7 @@ HOST= "127.0.0.1"
 PORT= 2008
 
 server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
 server_sock.bind((HOST, PORT))
-
 server_sock.listen(1)
 print(f"server listen on {HOST}:{PORT}")
 
@@ -19,7 +17,7 @@ while True:
     if not data:
         break
 
-client_socket.sendall(b"hello from server")
+client_socket.sendall(b"hello client")
 client_socket.close()
 print(f"clinet {client_addr} is down")
 server_sock.close()
